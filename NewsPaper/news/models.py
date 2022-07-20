@@ -47,7 +47,7 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     type_of_post = models.CharField(max_length=2, default=NEWS, choices=CHOISE_NW_AT)
     post_create_datetime = models.DateTimeField(auto_now_add=True)
-    post_category = models.ManyToManyField(Category, through='PostCategory')
+    post_category = models.ManyToManyField(Category, through='PostCategory', related_name='posts')
     post_title = models.CharField(max_length=128)
     post_text = models.TextField()
     post_rating = models.IntegerField(default=0)
@@ -63,10 +63,16 @@ class Post(models.Model):
     def preview(self):
         return f'{self.post_text[:124]}...'
 
+    # def __str__(self):
+    #     return f'{self.post_text[:20]}'
+
 
 class PostCategory(models.Model):
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    # def __str__(self):
+    #     return self.post_set.post_category()
 
 
 class Comment(models.Model):
