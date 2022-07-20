@@ -1,5 +1,5 @@
 from django import template
-# from flashtext import KeywordProcessor
+from flashtext import KeywordProcessor
 
 OBSCENE_WORDS = {}
 
