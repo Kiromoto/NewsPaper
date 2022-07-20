@@ -1,0 +1,21 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+{{ new }}
+{% endblock title %}
+
+{% block content %}
+<p>&nbsp;</p>
+<h3 align="center">{{ new.post_title|makegoodwords }}</h3>
+<hr>
+<p>&nbsp;</p>
+
+
+<!--<blockquote>-->
+    <p style="font-size: 1.2em; text-align: justify;">{{ new.post_text|makegoodwords }}</p>
+<!--</blockquote>-->
+
+<p>&nbsp;</p>
+<p style="font-size: 1.2em;" align="right">{{ new.post_create_datetime|date:'d M Y' }}</p>
+
+{% endblock content %}

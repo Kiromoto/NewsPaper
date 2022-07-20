@@ -16,7 +16,6 @@ class Author(models.Model):
         postR = 0
         postR += sum_post_rating.get('allPostRating')
 
-
         # суммарный рейтинг всех комментариев автора;
         sum_comment_rating = self.author_user.comment_set.aggregate(authorCommentRating=models.Sum('comment_rating'))
         commR = 0
@@ -27,12 +26,15 @@ class Author(models.Model):
         # pcommR = 0
         # pcommR += sum_PostComment_rating.get('allCommentPostRating')
 
-        self.author_rating = postR * 3 + commR #+ pcommR
+        self.author_rating = postR * 3 + commR  # + pcommR
         self.save()
 
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -63,16 +65,13 @@ class Post(models.Model):
     def preview(self):
         return f'{self.post_text[:124]}...'
 
-    # def __str__(self):
-    #     return f'{self.post_text[:20]}'
+    def __str__(self):
+        return self.post_title
 
 
 class PostCategory(models.Model):
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-
-    # def __str__(self):
-    #     return self.post_set.post_category()
 
 
 class Comment(models.Model):
@@ -89,4 +88,3 @@ class Comment(models.Model):
     def dislike(self):
         self.comment_rating -= 1
         self.save()
-

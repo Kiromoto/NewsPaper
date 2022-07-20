@@ -25,19 +25,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/admin/">Admin page
+                    <a class="nav-link" href="/admin/">Django administration
                         <span class="sr-only"></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about/">Page 1</a>
+                    <a class="nav-link" href="/news/">Все новости</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about/">Page 2</a>
+                    <a class="nav-link" href="/about/">О сайте</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about/">Page 3</a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/about/">Page 3</a>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>
@@ -45,7 +45,7 @@
 <!-- Page content-->
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 text-center">
+        <div class="col-lg-12 text-left">
             {% block content %}
             {{ flatpage.content }}
             {% endblock content %}
