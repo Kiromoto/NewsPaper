@@ -3,32 +3,40 @@
 {% load custom_filters %}
 
 {% block title %}
-    News
+    Search
 {% endblock title %}
 
 {% block content %}
+   <form align='' action="" method="get">
+       <p>{{ filterset.form.as_p }}</p>
+       <input type="submit" value="Найти">
+   </form>
     <p>&nbsp;</p>
-    <h6 align='right'>Количество новостей на странице: {{news|length}}</h6>
-    <h2>Все новости</h2>
+    <hr>
+    <p>&nbsp;</p>
+    <h6 align='right'>Найдено новостей на странице: {{search|length}}</h6>
+    <h2>По Вашему запросу найдены новости:</h2>
     <hr>
 
-    {% if news %}
+    {% if search %}
         <table align='center' border="0" cellspacing="0">
-           {% for new in news %}
+           {% for s in search %}
                 <tr align="left">
-                    <td>{{ new.post_title|makegoodwords}}</td>
-                    <td>{{ new.post_create_datetime|date:'d M Y' }}</td>
+                    <td>{{ s.post_title|makegoodwords}}</td>
+                    <td>{{ s.post_create_datetime|date:'d M Y' }}</td>
 <!--                    <td>{{ new.post_text}}</td>-->
-                    <td>{{ new.post_text|truncatechars:20|makegoodwords }}</td>
+                    <td>{{ s.post_text|truncatechars:20|makegoodwords }}</td>
                 </tr>
             {% endfor %}
         </table>
 
     {% else %}
-        <h3>На этом сайте новостей нет!</h3>
+        <h3>По Вашему запросу не найдено ни одной новости!</h3>
         <h1>:(</h1>
 
     {% endif %}
+
+
 
     <hr>
    {% if page_obj.has_previous %}
@@ -49,5 +57,7 @@
            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
        {% endif %}
    {% endif %}
-
 {% endblock content %}
+
+
+
