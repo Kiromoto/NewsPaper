@@ -11,6 +11,8 @@ class PostFilter(FilterSet):
                                       lookup_expr='gt', label='Материал опубликован после',
                                       widget=DateInput(attrs={'type': 'date'})
                                       )
+    post_create_datetime.field.error_messages = {'invalid': 'Введите дату в формате DD.MM.YYYY. Пример: 27.07.2022'}
+    post_create_datetime.field.widget.attrs = {'placeholder': 'DD.MM.YYYY'}
 
     class Meta:
         fields = {'post_title': ['icontains'],
