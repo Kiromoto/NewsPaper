@@ -76,6 +76,8 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_URL = '/'
+
 WSGI_APPLICATION = 'NewsPaper.wsgi.application'
 
 

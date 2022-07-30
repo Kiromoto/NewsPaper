@@ -1,8 +1,10 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from .models import Post
 from .filters import PostFilter
 from .forms import PostForm
+
 
 class PostList(ListView):
     model = Post
@@ -10,6 +12,7 @@ class PostList(ListView):
     template_name = 'news.html'
     context_object_name = 'news'
     paginate_by = 10
+
 
 class PostDetail(DetailView):
     model = Post
@@ -34,6 +37,7 @@ class PostSearch(ListView):
         context['filterset'] = self.filterset
         return context
 
+
 class PostCreate(CreateView):
     form_class = PostForm
     model = Post
@@ -50,3 +54,4 @@ class PostDelete(DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('news_list')
+

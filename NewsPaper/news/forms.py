@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, User, Author, Category
+from .models import Post
 from django.core.exceptions import ValidationError
 
 class PostForm(forms.ModelForm):
@@ -22,3 +22,4 @@ class PostForm(forms.ModelForm):
             raise ValidationError('Заголовок и содержания новости или статьи не должны совпадать')
 
         return cleaned_data
+
