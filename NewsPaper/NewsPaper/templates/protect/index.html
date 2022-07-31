@@ -1,0 +1,44 @@
+{% extends "flatpages/default.html" %}
+
+{% block content %}
+<h2>Страница авторизованного пользователя</h2>
+
+<table align='center' border="0" cellspacing="0">
+    <tr align="left">
+        <td>Логин пользователя:</td>
+        <td> {{request.user.username}} </td>
+    </tr>
+    <tr align="left">
+        <td>Имя пользователя:</td>
+        <td> {{request.user.first_name}} </td>
+    </tr>
+    <tr align="left">
+        <td>Фамилия пользователя:</td>
+        <td> {{request.user.last_name}} </td>
+    </tr>
+    <tr align="left">
+        <td>Почта пользователя:</td>
+        <td> {{request.user.email}} </td>
+    </tr>
+     <tr align="left">
+        <td>Состоит в группах:</td>
+         <td>
+             {% for g in request.user.groups.all %}
+                "{{ g.name }}"
+             {% endfor %}
+         </td>
+    </tr>
+</table>
+
+
+<div align="center"> Здесь может содержаться персональная информация для каждого пользователя </div>
+
+<button align="center"> <a href="accounts/logout/">Выйти</a> </button>
+
+
+{% if is_not_author %}
+<button> <a href="sign/upgrade/"> Стать автором!</a> </button>
+{% endif %}
+
+{% endblock %}
+

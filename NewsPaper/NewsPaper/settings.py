@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-j8q5_uk$xjo_=@m+-asq1x3^(zjpjy@g%j*=8pk_e7qna4h%g9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+# ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,6 +47,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
+    'sign',
+    'protect',
 
 
 ]
@@ -88,7 +91,7 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/news/'
 
-# SOCIALACCOUNT_FORMS = {'signup': 'sign.forms.SocialSignupForm'}
+SOCIALACCOUNT_FORMS = {'signup': 'sign.forms.SocialSignupForm'}
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
