@@ -2,6 +2,7 @@ from django import forms
 from .models import Post
 from django.core.exceptions import ValidationError
 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -12,7 +13,6 @@ class PostForm(forms.ModelForm):
                   'post_text',
                   ]
 
-
     def clean(self):
         cleaned_data = super().clean()
         name = cleaned_data.get('post_title')
@@ -22,4 +22,3 @@ class PostForm(forms.ModelForm):
             raise ValidationError('Заголовок и содержания новости или статьи не должны совпадать')
 
         return cleaned_data
-

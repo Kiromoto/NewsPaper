@@ -20,12 +20,6 @@ class PostFilter(FilterSet):
                   'post_create_datetime': ['gt'],
                   }
 
-
-
-
-
-
-
 # class PostFilter(FilterSet):
 #     date = DateFilter(field_name='post_create_datetime',
 #                       lookup_expr='gte',

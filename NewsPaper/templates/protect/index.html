@@ -1,7 +1,7 @@
 {% extends "flatpages/default.html" %}
 
 {% block content %}
-<h2>Страница авторизованного пользователя</h2>
+<h2 align="center">Страница авторизованного пользователя</h2>
 
 <table align='center' border="0" cellspacing="0">
     <tr align="left">
@@ -30,15 +30,21 @@
     </tr>
 </table>
 
-
+&nbsp;
 <div align="center"> Здесь может содержаться персональная информация для каждого пользователя </div>
-
-<button align="center"> <a href="accounts/logout/">Выйти</a> </button>
-
-
-{% if is_not_author %}
-<button> <a href="sign/upgrade/"> Стать автором!</a> </button>
-{% endif %}
+&nbsp;
+&nbsp;
+<form align="center">
+    <button> <a href="{% url 'user_edit' user.pk %}" style='...'>Редактировать профиль</a></button>
+</form>
+&nbsp;
+&nbsp;
+<form align="center">
+    <button> <a href="accounts/logout/">Выйти</a> </button>
+    {% if is_not_author %}
+        <button> <a href="sign/upgrade/"> Стать автором!</a> </button>
+    {% endif %}
+</form>
 
 {% endblock %}
 

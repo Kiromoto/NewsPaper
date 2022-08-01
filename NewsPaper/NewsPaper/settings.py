@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-j8q5_uk$xjo_=@m+-asq1x3^(zjpjy@g%j*=8pk_e7qna4h%g9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['127.0.0.1']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -100,7 +100,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_FORMS = {'signup': 'sign.forms.BasicSignupForm'}
 
 
-
 WSGI_APPLICATION = 'NewsPaper.wsgi.application'
 
 
@@ -149,7 +148,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'NewsPaper/static/'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -157,5 +156,5 @@ STATIC_URL = 'NewsPaper/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "NewsPaper/static"
+    BASE_DIR / "static"
 ]
