@@ -10,7 +10,7 @@
 <p>&nbsp;</p>
 <h3 align="center">{{ new.post_title|makegoodwords }}</h3>
 <hr>
-<p> <a href="{ new_edit }" style='...'><u>Редактировать пост</u></a></p>
+<p> <a href="{% url 'post_edit' post_detail.id %}" style='...'><u>Редактировать пост</u></a></p>
 
 
 <!--<blockquote>-->
