@@ -30,6 +30,9 @@ class Author(models.Model):
         self.author_rating = postR * 3 + commR  # + pcommR
         self.save()
 
+    def __str__(self):
+        return self.author_user.username
+
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
