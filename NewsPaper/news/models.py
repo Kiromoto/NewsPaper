@@ -36,10 +36,14 @@ class Author(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
+    subscriber = models.ManyToManyField(User, through='CategorySubscriber', blank=True)
 
     def __str__(self):
         return self.name
 
+class CategorySubscriber(models.Model):
+    subscriber_us = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    category_name = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
 
 class Post(models.Model):
     NEWS = 'NW'
@@ -57,6 +61,7 @@ class Post(models.Model):
     post_title = models.CharField(max_length=128)
     post_text = models.TextField()
     post_rating = models.IntegerField(default=0)
+    is_updated = models.BooleanField(default=False)
 
     def like(self):
         self.post_rating += 1

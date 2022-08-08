@@ -6,6 +6,7 @@ from .forms import PostForm
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
+
 class PostList(ListView):
     model = Post
     ordering = '-post_create_datetime'
