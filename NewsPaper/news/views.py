@@ -1,10 +1,10 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Post
+from .models import Post, CategorySubscriber, PostCategory, Category
 from .filters import PostFilter
 from .forms import PostForm
 from django.contrib.auth.mixins import PermissionRequiredMixin
-
+from django.shortcuts import render
 
 
 class PostList(ListView):
@@ -19,6 +19,12 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'new.html'
     context_object_name = 'new'
+
+    def index(request):
+        all_category_post = Category.objects.filter(Post.post_category)
+        data = {'yes': 'YES', 'no': 'NO'}
+        return render(request, 'new.html', context=data)
+
 
 
 class PostSearch(ListView):

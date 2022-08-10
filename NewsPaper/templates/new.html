@@ -11,8 +11,8 @@
 <h3 align="center">{{ new.post_title|makegoodwords }}</h3>
 <hr>
 <p>
-    <a href="{% url 'new_edit' new.pk %}" style='...'><u>Редактировать пост</u></a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-    <a href="{% url 'new_delete' new.pk %}" style='...'><u>Удалить пост</u></a>
+    <a href="{% url 'new_edit' new.pk %}" style='...'><u style="font-size: 1.2em;">Редактировать пост</u></a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    <a href="{% url 'new_delete' new.pk %}" style='...'><u style="font-size: 1.2em;">Удалить пост</u></a>
 </p>
 
 
@@ -22,5 +22,26 @@
 
 <p>&nbsp;</p>
 <p style="font-size: 1.2em;" align="right">{{ new.post_create_datetime|date:'d M Y' }}</p>
+
+
+
+<table align='left' border="0" cellspacing="0" style="font-size: 1.2em;">
+    <tr align="left">
+        <td>Категории в статье:</td>
+        <td>
+            {% for cat in new.post_category.all %}
+<!--                 <td><a href="sign/upgrade/">{{ cat.name }}</a></td>-->
+                 <td><a href="{% url 'category_search' cat.id %}"><u>{{ cat.name }}</u></a></td>
+            {% endfor %}
+
+    </tr>
+
+    <tr align="left">
+        <td >Для теста:</td>
+        <td> {{ yes }} </td>
+    </tr>
+</table>
+
+
 
 {% endblock content %}

@@ -28,6 +28,14 @@
              {% endfor %}
          </td>
     </tr>
+    <tr align="left">
+        <td>Подписан на категории новостей:</td>
+         <td>
+             {% for g in request.category.all %}
+                "{{ g.name }}"
+             {% endfor %}
+         </td>
+    </tr>
 </table>
 
 &nbsp;

@@ -100,13 +100,13 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/news/'
 
-SOCIALACCOUNT_FORMS = {'signup': 'sign.forms.SocialSignupForm'}
+# SOCIALACCOUNT_FORMS = {'signup': 'sign.forms.SocialSignupForm'}
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_FORMS = {'signup': 'sign.forms.BasicSignupForm'}
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_FORMS = {'signup': 'sign.forms.BasicSignupForm'}
 
 
 WSGI_APPLICATION = 'NewsPaper.wsgi.application'
@@ -167,3 +167,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+
+EMAIL_HOST = os.getenv("EMAIL_HOST")  # адрес сервера Яндекс-почты для всех один и тот же
+EMAIL_PORT = os.getenv("EMAIL_PORT")  # порт smtp сервера тоже одинаковый
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # пароль от почты
+EMAIL_USE_SSL = True
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
