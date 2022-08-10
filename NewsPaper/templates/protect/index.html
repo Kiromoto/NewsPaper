@@ -31,9 +31,10 @@
     <tr align="left">
         <td>Подписан на категории новостей:</td>
          <td>
-<!--             {% for el in sign.category_for_this_user.all %}-->
-<!--                {{el}}-->
-<!--             {% endfor %}-->
+<!--             {{ request.user.categoty_set.all }}-->
+             {% for el in request.user.category_set.all %}
+                "{{el}}"&nbsp;
+             {% endfor %}
          </td>
     </tr>
 </table>
