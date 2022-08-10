@@ -4,7 +4,9 @@ from .models import Post, CategorySubscriber, PostCategory, Category
 from .filters import PostFilter
 from .forms import PostForm
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 
 class PostList(ListView):
@@ -20,10 +22,58 @@ class PostDetail(DetailView):
     template_name = 'new.html'
     context_object_name = 'new'
 
-    def index(request):
-        all_category_post = Category.objects.filter(Post.post_category)
-        data = {'yes': 'YES', 'no': 'NO'}
-        return render(request, 'new.html', context=data)
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     id = self.kwargs.get('pk')
+    #     qwe = Category.objects.filter(pk=Post.objects.get(pk=id).post_category.id).values('subscriber__username')
+    #     context['is_not_subscribe'] = not qwe.filter(subscriber__username=self.request.user).exists()
+    #     context['is_subscribe'] = qwe.filter(subscriber__username=self.request.user).exists()
+    #     return context
+
+# def add_subscribe(request, **kwargs):
+#     pk = request.GET.get('pk',)
+#     print('Пользователь', request.user, 'добавлен в подписчики:', Category.objects.get(pk=pk))
+#     Category.objects.get(pk=pk).subscriber.add(request.user)
+#     return redirect('/news/')
+
+@login_required
+def subscribe_me(request, pk):
+    print('Button..START!')
+    print(pk)
+    cat_id = request
+    print(cat_id)
+    user = request.user
+    print(f'{user} и его ID: {user.id}')
+    print('Пользователю', user, 'добавлена в подписки категория:', Category.objects.get(pk=pk))
+    Category.objects.get(pk=pk).subscriber.add(user)
+
+    category_for_this_user = CategorySubscriber.objects.filter(subscriber_user=user.id).values('category_name')
+    print(category_for_this_user)
+    for i in category_for_this_user:
+        n = i['category_name']
+        print(n)
+    print('Button..OK!')
+
+
+    # pk = request.GET.get('pk', )
+    # print('Пользователю', request.user, 'добавлена категория в подписки:', Category.objects.get(pk=pk))
+
+    # user = request.user
+    # authors_group = Group.objects.get(name='authors')
+    # if not request.user.groups.filter(name='authors').exists():
+    #     authors_group.user_set.add(user)
+    return redirect('/news/')
+
+
+# @login_required
+# def upgrade_me(request):
+#     user = request.user
+#     authors_group = Group.objects.get(name='authors')
+#     if not request.user.groups.filter(name='authors').exists():
+#         authors_group.user_set.add(user)
+#     return redirect('/news/')
+
 
 
 

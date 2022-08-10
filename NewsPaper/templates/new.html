@@ -28,20 +28,26 @@
 <table align='left' border="0" cellspacing="0" style="font-size: 1.2em;">
     <tr align="left">
         <td>Категории в статье:</td>
-        <td>
             {% for cat in new.post_category.all %}
-<!--                 <td><a href="sign/upgrade/">{{ cat.name }}</a></td>-->
-                 <td><a href="{% url 'category_search' cat.id %}"><u>{{ cat.name }}</u></a></td>
+                 <td ><a href="{% url 'category_search' cat.id %}"><u>{{ cat.name }}</u></a>&nbsp;</td>
             {% endfor %}
-
-    </tr>
-
-    <tr align="left">
-        <td >Для теста:</td>
-        <td> {{ yes }} </td>
     </tr>
 </table>
 
+<p><strong>&nbsp; &nbsp;</strong></p>
+<p><strong>&nbsp; &nbsp;</strong></p>
 
+<table align='left' border="0" cellspacing="0" style="font-size: 1.2em;">
+    <tr align="right">
+        <form align="center">
+            {% for cat in new.post_category.all %}
+               <button> <a href="{% url 'subscr_me' cat.id %}">Подписаться на {{ cat.name }}</a> </button>&nbsp; &nbsp;
+            {% endfor %}
+        </form>
+    </tr>
+
+</table>
+
+{{category_for_this_user}}
 
 {% endblock content %}

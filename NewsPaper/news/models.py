@@ -42,7 +42,7 @@ class Category(models.Model):
         return self.name
 
 class CategorySubscriber(models.Model):
-    subscriber_us = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    subscriber_user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     category_name = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
 
 class Post(models.Model):
