@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
 
     'fpages',
-    'news',
+    'news.apps.NewsConfig',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

@@ -7,7 +7,7 @@
 </head>
 <body>
     {% load account %}
-    <h1>Спасибо за регистрацию, {{ user.username }}!</h1>
+    <h1>Спасибо за регистрацию, {{ request.user.username }}!</h1>
     <h3>Перейдите по  <a href="{{ activate_url }}">ссылке</a> для завершения регистрации!</h3>
 </body>
 </html>

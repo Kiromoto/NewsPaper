@@ -39,21 +39,16 @@ class PostDetail(DetailView):
 
 @login_required
 def subscribe_me(request, pk):
-    print('Button..START!')
-    print(pk)
-    cat_id = request
-    print(cat_id)
     user = request.user
     print(f'{user} и его ID: {user.id}')
     print('Пользователю', user, 'добавлена в подписки категория:', Category.objects.get(pk=pk))
     Category.objects.get(pk=pk).subscriber.add(user)
-
     category_for_this_user = CategorySubscriber.objects.filter(subscriber_user=user.id).values('category_name')
-    print(category_for_this_user)
     for i in category_for_this_user:
         n = i['category_name']
-        print(n)
-    print('Button..OK!')
+        print(f'{n} - {Category.objects.get(pk=n)}')
+
+    return redirect('/')
 
 
     # pk = request.GET.get('pk', )
@@ -63,7 +58,6 @@ def subscribe_me(request, pk):
     # authors_group = Group.objects.get(name='authors')
     # if not request.user.groups.filter(name='authors').exists():
     #     authors_group.user_set.add(user)
-    return redirect('/news/')
 
 
 # @login_required
