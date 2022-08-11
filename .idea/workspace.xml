@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958a852c-66ed-46cf-abc7-647f7b14103e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/account/email/email_confirmation_signup_message.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/account/email/email_confirmation_subject.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/news/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/post_emailsend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/protect/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/protect/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/account/email/email_confirmation_signup_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/account/email/email_confirmation_signup_message.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/protect/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/protect/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -45,12 +44,13 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/CODE/code_python/NewsPaper/NewsPaper/templates/account",
+    "last_opened_file_path": "C:/CODE/code_python/NewsPaper/NewsPaper/templates",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CODE\code_python\NewsPaper\NewsPaper\templates" />
       <recent name="C:\CODE\code_python\NewsPaper\NewsPaper\templates\account" />
       <recent name="C:\CODE\code_python\NewsPaper\NewsPaper\NewsPaper\templates" />
       <recent name="C:\CODE\code_python\NewsPaper\NewsPaper\NewsPaper\templates\protect" />
