@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from dotenv import load_dotenv
 
 import os
+
 from pathlib import Path
 
 
@@ -148,6 +149,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+# TIME_ZONE = datetime.timezone(datetime.timedelta(hours=3))
 
 USE_I18N = True
 
