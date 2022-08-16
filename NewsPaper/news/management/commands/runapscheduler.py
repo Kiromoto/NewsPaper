@@ -9,21 +9,16 @@ from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 
 import time
-
-
-from django.core.mail import send_mail, EmailMultiAlternatives
-from django.template.loader import render_to_string
-
+from news.tasks import weekly_mails
 
 logger = logging.getLogger(__name__)
 
 
 # наша задача по выводу текста на экран
 def my_job():
+    weekly_mails()
     n_time = time.localtime()
     print(f'Print from my_job. Time: {n_time}')
-
-
 
 
 # функция, которая будет удалять неактуальные задачи
@@ -47,10 +42,11 @@ class Command(BaseCommand):
         #                   replace_existing=True,)
 
         scheduler.add_job(my_job,
-                          trigger=CronTrigger(second="*/10"), # То же, что и интервал, но задача тригера таким образом более понятна django
-                          id="my_job",   # уникальный айди
+                          trigger=CronTrigger(second="*/20"),
+                          # То же, что и интервал, но задача тригера таким образом более понятна django
+                          id="my_job",  # уникальный айди
                           max_instances=1,
-                          replace_existing=True,)
+                          replace_existing=True, )
 
         logger.info("Added job 'my_job'.")
 

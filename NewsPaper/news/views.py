@@ -110,3 +110,8 @@ class PostDelete(PermissionRequiredMixin, DeleteView):
     success_url = reverse_lazy('news_list')
 
 
+def SubscriberNotificationMail(a):
+    print(f'VIEWS.PY SubscriberNotificationMail + {a}')
+    pass
+
+
