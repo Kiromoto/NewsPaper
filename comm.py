@@ -1,1 +1,0 @@
-from news.models import *
