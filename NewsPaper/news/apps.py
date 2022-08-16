@@ -8,16 +8,16 @@ class NewsConfig(AppConfig):
     def ready(self):
         import news.signals
 
-        from .tasks import weekly_mails
-        from .scheduler import scheduler
-        print('def ready...OK! import...OK! Started!')
-
-        scheduler.add_job(
-            id='mail send',
-            func=weekly_mails,
-            trigger='interval',
-            seconds=20,
-            # weeks=1,
-        )
+        # from .tasks import weekly_mails
+        # from .scheduler import scheduler
+        # print('def ready...OK! import...OK! Started from apps.py!')
+        #
+        # scheduler.add_job(
+        #     id='mail send',
+        #     func=weekly_mails,
+        #     trigger='interval',
+        #     seconds=20,
+        #     # weeks=1,
+        # )
 
         # scheduler.start()
