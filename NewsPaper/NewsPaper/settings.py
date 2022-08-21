@@ -148,8 +148,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-# TIME_ZONE = datetime.timezone(datetime.timedelta(hours=3))
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Minsk'
+USE_TZ = True
+
 
 USE_I18N = True
 
@@ -181,3 +183,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
