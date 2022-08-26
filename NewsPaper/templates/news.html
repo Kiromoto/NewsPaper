@@ -2,9 +2,13 @@
 
 {% load custom_filters %}
 
+{% load cache %}
+
+{% cache 30 title %}
 {% block title %}
     News
 {% endblock title %}
+{% endcache %}
 
 {% block content %}
     <p>&nbsp;</p>
