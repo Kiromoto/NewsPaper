@@ -13,3 +13,4 @@ keyword_processor.add_keywords_from_dict(OBSCENE_WORDS)
 def makegoodwords(value):
     new_value = keyword_processor.replace_keywords(value)
     return new_value
+

@@ -2,10 +2,12 @@ from datetime import date, timedelta
 from .models import *
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from celery import shared_task
 
 
+@shared_task
 def weekly_mails():
-    # print('Print from TASKS.py every 20 seconds! weekly_mails')
+    print('Print from TASKS.py every 20 seconds! weekly_mails')
     try:
         for user_one in User.objects.all():
             user_cat = []
@@ -45,3 +47,34 @@ def weekly_mails():
 
     except Exception as e:
         print(f'Ошибка получения данных из db. {e}')
+
+def mail_send_post_create():
+    recipient_email_list = ['kiromotossindzi@gmail.com', ]
+
+    try:
+        cat = PostCategory.objects.filter(post_id=instance.id).values('category_id')
+        idcat = cat[0]["category_id"]
+        namecat = Category.objects.filter(postcategory__post_id=instance.id)
+        y1 = CategorySubscriber.objects.filter(category_name=idcat)
+        if y1:
+            for el in y1:
+                u = User.objects.get(id=el.subscriber_user_id)
+                if u.email and u.email not in recipient_email_list:
+                    recipient_email_list.append(u.email)
+    except Exception:
+        print('Ошибка получения данных о категории')
+    else:
+        subject = f'Опубликована новая статья в вашей любимой категории "{namecat[0].name}" на NewsPaper.'
+        ur = f'http://127.0.0.1:8000{instance.get_absolute_url()}'
+        html_content = render_to_string('post_emailsend.html', {'post': instance, 'ur': ur, })
+        msg = EmailMultiAlternatives(subject=subject,
+                                     body=instance.post_text[:20],
+                                     from_email='tlfordjango@mail.ru',
+                                     to=recipient_email_list,
+                                     )
+
+        msg.attach_alternative(html_content, 'text/html')
+        msg.send()
+    finally:
+        print(recipient_email_list)
+
