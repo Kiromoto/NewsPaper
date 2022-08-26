@@ -9,3 +9,5 @@ env.bak/
 venv.bak/
 **/pytest_cache/
 **/__pytest_cache__
+**/__cache_files__
+__cache_files__/
