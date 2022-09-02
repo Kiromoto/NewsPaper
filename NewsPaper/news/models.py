@@ -38,6 +38,9 @@ class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
     subscriber = models.ManyToManyField(User, through='CategorySubscriber', blank=True)
 
+    # def get_subscribers(self):
+    #     return '\n'.join([c.subscriber_user for c in self.subscriber.all()])
+
     def __str__(self):
         return self.name
 
@@ -63,6 +66,9 @@ class Post(models.Model):
     post_rating = models.IntegerField(default=0)
     is_updated = models.BooleanField(default=False)
     is_new = models.BooleanField(default=True)
+
+    def get_category(self):
+        return '\n'.join([c.name for c in self.post_category.all()])
 
     def like(self):
         self.post_rating += 1
@@ -93,6 +99,10 @@ class Comment(models.Model):
     comment_text = models.TextField()
     comment_datetime = models.DateTimeField(auto_now_add=True)
     comment_rating = models.IntegerField(default=0)
+
+    def get_posttitle(self):
+        a = self.postComment()
+        return f'{a.post_title}'
 
     def like(self):
         self.comment_rating += 1
