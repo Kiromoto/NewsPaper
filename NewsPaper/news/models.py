@@ -3,9 +3,6 @@ from django.db import models
 from django.urls import reverse
 
 
-# ______________________________________________________________________________________________________________________
-# ______________________________________________________________________________________________________________________
-# Код итогового задания
 class Author(models.Model):
     author_user = models.OneToOneField(User, on_delete=models.CASCADE)
     author_rating = models.IntegerField(default=0)
@@ -38,15 +35,17 @@ class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
     subscriber = models.ManyToManyField(User, through='CategorySubscriber', blank=True)
 
-    # def get_subscribers(self):
-    #     return '\n'.join([c.subscriber_user for c in self.subscriber.all()])
+    def get_subscribers(self):
+        return ';\n'.join([s.username for s in self.subscriber.all()])
 
     def __str__(self):
         return self.name
 
+
 class CategorySubscriber(models.Model):
     subscriber_user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     category_name = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
+
 
 class Post(models.Model):
     NEWS = 'NW'
@@ -99,10 +98,6 @@ class Comment(models.Model):
     comment_text = models.TextField()
     comment_datetime = models.DateTimeField(auto_now_add=True)
     comment_rating = models.IntegerField(default=0)
-
-    def get_posttitle(self):
-        a = self.postComment()
-        return f'{a.post_title}'
 
     def like(self):
         self.comment_rating += 1

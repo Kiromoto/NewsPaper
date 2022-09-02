@@ -1,12 +1,14 @@
 from django.contrib import admin
-from .models import Author, Category, Post, Comment, PostCategory
+from .models import Author, Category, Post, Comment, PostCategory, CategorySubscriber
 
 
 def nullfy_postrating(modeladmin, request, queryset):
     queryset.update(post_rating=0)
 
+
 def nullfy_commentrating(modeladmin, request, queryset):
     queryset.update(comment_rating=0)
+
 
 nullfy_commentrating.short_description = 'Обнулить рейтинг комментария'
 
@@ -23,12 +25,14 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('id', 'name', 'get_subscribers')
     search_fields = ('id', 'name')
+
 
 class PostCategoryAdmin(admin.ModelAdmin):
     list_display = ('post_id', 'category_id')
     list_filter = ('post_id', 'category_id')
+
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('postComment', 'user', 'comment_text', 'comment_rating', 'comment_datetime')
@@ -36,6 +40,10 @@ class CommentAdmin(admin.ModelAdmin):
     actions = [nullfy_commentrating]
 
 
+class CategorySubscriberAdmin(admin.ModelAdmin):
+    list_display = ('subscriber_user', 'category_name')
+    search_fields = ('subscriber_user', 'category_name')
+    search_filter = ('subscriber_user', 'category_name')
 
 
 admin.site.register(Author, AuthorAdmin)
@@ -43,3 +51,4 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(PostCategory, PostCategoryAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(CategorySubscriber, CategorySubscriberAdmin)
