@@ -14,36 +14,36 @@ nullfy_commentrating.short_description = 'Обнулить рейтинг ком
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('author', 'post_title', 'post_text', 'get_category', 'post_rating', 'post_create_datetime')
-    list_filter = ('author', 'post_title', 'post_rating', 'post_create_datetime')
-    search_fields = ('post_title', 'post_text')
+    list_display = ('author', 'post_title', 'post_text', 'get_category', 'post_rating', 'post_create_datetime',)
+    list_filter = ('author', 'post_title', 'post_rating', 'post_create_datetime',)
+    search_fields = ('post_title', 'post_text',)
     actions = [nullfy_postrating]
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('author_user', 'author_rating')
+    list_display = ('author_user', 'author_rating',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'get_subscribers')
-    search_fields = ('id', 'name')
+    list_display = ('id', 'name', 'get_subscribers',)
+    search_fields = ('id', 'name',)
 
 
 class PostCategoryAdmin(admin.ModelAdmin):
-    list_display = ('post_id', 'category_id')
-    list_filter = ('post_id', 'category_id')
+    list_display = ('post_id', 'category_id',)
+    list_filter = ('category_id', )
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('postComment', 'user', 'comment_text', 'comment_rating', 'comment_datetime')
-    search_fields = ('postComment', 'comment_test')
+    list_display = ('postComment', 'user', 'comment_text', 'comment_rating', 'comment_datetime',)
+    search_fields = ('postComment', 'comment_test',)
     actions = [nullfy_commentrating]
 
 
 class CategorySubscriberAdmin(admin.ModelAdmin):
-    list_display = ('subscriber_user', 'category_name')
-    search_fields = ('subscriber_user', 'category_name')
-    search_filter = ('subscriber_user', 'category_name')
+    list_display = ('subscriber_user', 'category_name',)
+    search_fields = ('subscriber_user', 'category_name',)
+    search_filter = ('subscriber_user', 'category_name',)
 
 
 admin.site.register(Author, AuthorAdmin)
