@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958a852c-66ed-46cf-abc7-647f7b14103e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NewsPaper/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/22160ad06ac4adf5c502c69efeb25d9c.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/2754c07124f7fc90651a7fc9dee46c68.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/29702f35702dc1ea7e4fb8269d025559.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/3704cd26d42ed7bcc5a1a04cd574fc61.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/3c4bad9d166a01e5d06c392ece7efc41.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/5abf10b5a1f79176376228a992a9424d.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/6acb121c974ecb01d8b80c5d86243790.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/8bba987ceed97a6e37f798b6c2f759b8.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/9d992a40035ec71b5cfc0e63f6afa290.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/e720f8d19593a81c7f543f7e3f07eb5e.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/fecaeb727b59ba7ab223e62290e6c9a0.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/news/templatetags/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/cache_files/57c5822ab08ed23c0e6bbb6773a18872.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/cache_files/57c5822ab08ed23c0e6bbb6773a18872.djcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/cache_files/91cc181979a27ca39083d54dab8e06b0.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/cache_files/91cc181979a27ca39083d54dab8e06b0.djcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/badwords.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/templatetags/badwords.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/templatetags/custom_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/templatetags/custom_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/flatpages/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/flatpages/default.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -201,3 +201,6 @@ CACHES = {
     }
 }
 
+LOGGING = {
+
+}
