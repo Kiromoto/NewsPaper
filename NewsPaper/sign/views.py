@@ -5,6 +5,9 @@ from django.views.generic.edit import CreateView, UpdateView
 from .models import BaseRegisterForm
 from .forms import UserForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class BaseRegisterView(CreateView):

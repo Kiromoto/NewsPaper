@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.core.cache import cache
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class PostList(ListView):
@@ -32,7 +35,6 @@ class PostDetail(DetailView):
 
         return obj
 
-
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
     #     id = self.kwargs.get('pk')
@@ -40,6 +42,7 @@ class PostDetail(DetailView):
     #     context['is_not_subscribe'] = not qwe.filter(subscriber__username=self.request.user).exists()
     #     context['is_subscribe'] = qwe.filter(subscriber__username=self.request.user).exists()
     #     return context
+
 
 # def add_subscribe(request, **kwargs):
 #     pk = request.GET.get('pk',)
@@ -60,7 +63,6 @@ def subscribe_me(request, pk):
 
     return redirect('/')
 
-
     # pk = request.GET.get('pk', )
     # print('Пользователю', request.user, 'добавлена категория в подписки:', Category.objects.get(pk=pk))
 
@@ -77,8 +79,6 @@ def subscribe_me(request, pk):
 #     if not request.user.groups.filter(name='authors').exists():
 #         authors_group.user_set.add(user)
 #     return redirect('/news/')
-
-
 
 
 class PostSearch(ListView):
@@ -123,5 +123,3 @@ class PostDelete(PermissionRequiredMixin, DeleteView):
 def SubscriberNotificationMail(a):
     print(f'VIEWS.PY SubscriberNotificationMail + {a}')
     pass
-
-
