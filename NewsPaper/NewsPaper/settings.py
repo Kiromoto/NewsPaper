@@ -16,14 +16,12 @@ import os
 
 from pathlib import Path
 
-
 load_dotenv()
-env_path = Path('.')/'.env'
+env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -37,7 +35,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
-
 
 # Application definition
 
@@ -96,7 +93,7 @@ TEMPLATES = [
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
                            'allauth.account.auth_backends.AuthenticationBackend',
-]
+                           ]
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/news/'
@@ -111,7 +108,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 
 WSGI_APPLICATION = 'NewsPaper.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -153,7 +149,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -165,7 +160,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -181,10 +175,10 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-
 EMAIL_HOST = os.getenv("EMAIL_HOST")  # адрес сервера Яндекс-почты для всех один и тот же
 EMAIL_PORT = os.getenv("EMAIL_PORT")  # порт smtp сервера тоже одинаковый
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_USER = os.getenv(
+    "EMAIL_HOST_USER")  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # пароль от почты
 EMAIL_USE_SSL = True
 
@@ -193,11 +187,11 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
 
-
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, 'cache_files'),# Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
+        # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
     }
 }
 
@@ -205,11 +199,50 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
 
-    'loggers': {'django': {'handlers': ['console'],
-                           },
+    'loggers': {
+        'django': {
+            'handlers': ['console_debug', 'console_warning', 'console_error_critical'],
+            'level': 'DEBUG',
+        },
+    },
 
-                },
+    'handlers': {
+        'console_debug': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'f_console_debug',
+        },
 
-    'handlers': {'console': ''}
+        'console_warning': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'f_console_warning',
+        },
+
+        'console_error_critical': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+            'formatter': 'f_console_error_critical',
+        },
+
+    },
+
+    'formatters': {
+        'f_console_debug': {
+            'format': '{asctime} {levelname} {message}',
+            'datetime': '%H:%M:%S',
+            'style': '{',
+        },
+
+        'f_console_warning': {
+            'format': '{asctime} {levelname} {pathname} {message}',
+            'style': '{',
+        },
+
+        'f_console_error_critical': {
+            'format': '{asctime} {levelname} {pathname} {message} {exc_info}',
+            'style': '{',
+        },
+    },
 
 }
