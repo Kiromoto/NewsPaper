@@ -56,3 +56,62 @@ C:\CODE\code_python\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading
 2022-09-14 23:59:02,238 INFO autoreload Watching for file changes with StatReloader
 2022-09-15 00:01:31,240 INFO autoreload C:\CODE\code_python\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
 2022-09-15 00:01:31,857 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 10:52:26,591 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 10:54:20,631 WARNING log Forbidden (CSRF token missing.): /news/62/edit/
+2022-09-15 11:03:36,101 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 11:03:37,756 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 11:03:47,261 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 11:03:48,891 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 11:06:42,149 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 11:07:16,046 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:32:55,492 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:32:58,358 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:33:19,307 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:33:52,084 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:35:07,415 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:35:09,435 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:35:21,740 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:35:23,529 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:36:02,872 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:36:04,578 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:36:16,360 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:36:18,371 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:36:22,843 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:36:24,991 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:43:11,579 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:43:14,298 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:55:46,573 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:55:48,931 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:56:44,849 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 15:56:47,632 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:59:03,384 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 15:59:05,879 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:59:19,118 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 15:59:21,537 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:59:30,290 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 15:59:33,978 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:59:45,860 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 15:59:47,908 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 15:59:51,820 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 15:59:53,630 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:00:03,540 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 16:00:06,035 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:00:16,031 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 16:00:18,363 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:00:43,122 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 16:00:45,122 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:01:44,866 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\news\views.py changed, reloading.
+2022-09-15 16:01:46,970 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:02:53,600 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 16:02:55,640 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:07:02,652 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 16:07:05,153 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:07:49,085 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 16:07:51,159 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:08:46,086 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 16:08:48,270 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:08:52,019 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 16:08:53,749 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:10:43,432 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
+2022-09-15 16:10:45,212 INFO autoreload Watching for file changes with StatReloader
+2022-09-15 16:11:23,388 INFO autoreload E:\CODE\PYTHON\NewsPaper\NewsPaper\NewsPaper\settings.py changed, reloading.
