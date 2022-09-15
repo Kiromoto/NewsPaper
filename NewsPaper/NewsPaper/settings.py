@@ -201,9 +201,31 @@ LOGGING = {
 
     'loggers': {
         'django': {
-            'handlers': ['console_debug', 'console_warning', 'console_error_critical'],
-            'level': 'DEBUG',
+            'handlers': ['console_debug', 'console_warning', 'console_error_critical', 'file_info', ],
+            'propagate': True,
         },
+
+        'django.request': {
+            'handlers': ['file_error_critical', ],
+            'propagate': False,
+        },
+
+        'django.server': {
+            'handlers': ['file_error_critical', ],
+        },
+
+        'django.template': {
+            'handlers': ['file_error_critical', ],
+        },
+
+        'django.db_backends': {
+            'handlers': ['file_error_critical', ],
+        },
+
+        'django.security': {
+            'handlers': ['file_security_debug', ],
+        },
+
     },
 
     'handlers': {
@@ -225,6 +247,27 @@ LOGGING = {
             'formatter': 'f_console_error_critical',
         },
 
+        'file_info': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'general.log',
+            'formatter': 'f_file_info',
+        },
+
+        'file_error_critical': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'errors.log',
+            'formatter': 'f_file_error_critical',
+        },
+
+        'file_security_debug': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'security.log',
+            'formatter': 'f_file_security_debug',
+        },
+
     },
 
     'formatters': {
@@ -243,6 +286,22 @@ LOGGING = {
             'format': '{asctime} {levelname} {pathname} {message} {exc_info}',
             'style': '{',
         },
+
+        'f_file_info': {
+            'format': '{asctime} {levelname} {module} {message}',
+            'style': '{',
+        },
+
+        'f_file_error_critical': {
+            'format': '{asctime} {levelname} {message} {pathname} {exc_info}',
+            'style': '{',
+        },
+
+        'f_file_security_debug': {
+            'format': '{asctime} {levelname} {module} {message}',
+            'style': '{',
+        },
+
     },
 
 }

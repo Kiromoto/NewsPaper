@@ -7,7 +7,7 @@ from celery import shared_task
 
 @shared_task
 def weekly_mails():
-    print('Print from TASKS.py every 20 seconds! weekly_mails')
+    # print('Print from TASKS.py every 20 seconds! weekly_mails')
     try:
         for user_one in User.objects.all():
             user_cat = []
@@ -49,7 +49,8 @@ def weekly_mails():
         print(f'Ошибка получения данных из db. {e}')
 
 def mail_send_post_create():
-    recipient_email_list = ['kiromotossindzi@gmail.com', ]
+    # recipient_email_list = ['kiromotossindzi@gmail.com', ]
+    recipient_email_list = []
 
     try:
         cat = PostCategory.objects.filter(post_id=instance.id).values('category_id')
@@ -76,5 +77,5 @@ def mail_send_post_create():
         msg.attach_alternative(html_content, 'text/html')
         msg.send()
     finally:
-        print(recipient_email_list)
+        print(f'Print from tasks.py: {recipient_email_list}')
 
