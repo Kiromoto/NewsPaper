@@ -201,10 +201,22 @@ CACHES = {
         # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
     }
 }
+# ADMINS = [
+#     ('Admin', 'kiromoto@tut.by'),
+# ]
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    },
 
     'loggers': {
         'django': {
@@ -213,12 +225,13 @@ LOGGING = {
         },
 
         'django.request': {
-            'handlers': ['file_error_critical', ],
+            'handlers': ['file_error_critical', 'mail_request_server_error', ],
             'propagate': False,
         },
 
         'django.server': {
-            'handlers': ['file_error_critical', ],
+            'handlers': ['file_error_critical', 'mail_request_server_error', ],
+            'propagate': False,
         },
 
         'django.template': {
@@ -240,18 +253,21 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'f_console_debug',
+            'filters': ['require_debug_true'],
         },
 
         'console_warning': {
             'level': 'WARNING',
             'class': 'logging.StreamHandler',
             'formatter': 'f_console_warning',
+            'filters': ['require_debug_true'],
         },
 
         'console_error_critical': {
             'level': 'ERROR',
             'class': 'logging.StreamHandler',
             'formatter': 'f_console_error_critical',
+            'filters': ['require_debug_true'],
         },
 
         'file_info': {
@@ -259,6 +275,7 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': 'general.log',
             'formatter': 'f_file_info',
+            'filters': ['require_debug_false'],
         },
 
         'file_error_critical': {
@@ -275,6 +292,12 @@ LOGGING = {
             'formatter': 'f_file_security_debug',
         },
 
+        'mail_request_server_error': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'f_mail_request_server_error',
+            'filters': ['require_debug_false'],
+        },
     },
 
     'formatters': {
@@ -306,6 +329,11 @@ LOGGING = {
 
         'f_file_security_debug': {
             'format': '{asctime} {levelname} {module} {message}',
+            'style': '{',
+        },
+
+        'f_mail_request_server_error': {
+            'format': '{asctime} {levelname} {pathname} {message}',
             'style': '{',
         },
 
