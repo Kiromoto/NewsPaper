@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy
 
 
 class Author(models.Model):
@@ -32,7 +34,7 @@ class Author(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=64, unique=True)
+    name = models.CharField(max_length=64, unique=True, help_text=_('category name'))
     subscriber = models.ManyToManyField(User, through='CategorySubscriber', blank=True)
 
     def get_subscribers(self):
@@ -59,7 +61,7 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     type_of_post = models.CharField(max_length=2, default=NEWS, choices=CHOISE_NW_AT)
     post_create_datetime = models.DateTimeField(auto_now_add=True)
-    post_category = models.ManyToManyField(Category, through='PostCategory', related_name='posts')
+    post_category = models.ManyToManyField(Category, through='PostCategory', related_name='posts', verbose_name=pgettext_lazy('This is the help text'))
     post_title = models.CharField(max_length=128)
     post_text = models.TextField()
     post_rating = models.IntegerField(default=0)

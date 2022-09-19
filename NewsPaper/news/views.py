@@ -35,13 +35,15 @@ class PostDetail(DetailView):
 
         return obj
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     id = self.kwargs.get('pk')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        id = self.kwargs.get('pk')
+        # context['is_subscribe'] = True
+        # print(Post.objects.get(id=id).post_title)
     #     qwe = Category.objects.filter(pk=Post.objects.get(pk=id).post_category.id).values('subscriber__username')
     #     context['is_not_subscribe'] = not qwe.filter(subscriber__username=self.request.user).exists()
     #     context['is_subscribe'] = qwe.filter(subscriber__username=self.request.user).exists()
-    #     return context
+        return context
 
 
 # def add_subscribe(request, **kwargs):
@@ -60,6 +62,21 @@ def subscribe_me(request, pk):
     for i in category_for_this_user:
         n = i['category_name']
         print(f'{n} - {Category.objects.get(pk=n)}')
+
+    return redirect('/')
+
+@login_required
+def unsubscribe_me(request, **kwargs):
+    user = request.user
+    pk = kwargs.get('pk',)
+    print(f'kwargs.get("pk",)= {pk}')
+    print(f'{user} и его ID: {user.id}')
+        # print('Пользователь', user, 'отписан от категории:', Category.objects.get(pk=pk))
+        # Category.objects.get(pk=pk).subscriber.add(user)
+        # category_for_this_user = CategorySubscriber.objects.filter(subscriber_user=user.id).values('category_name')
+        # for i in category_for_this_user:
+        #     n = i['category_name']
+        #     print(f'{n} - {Category.objects.get(pk=n)}')
 
     return redirect('/')
 
@@ -119,7 +136,3 @@ class PostDelete(PermissionRequiredMixin, DeleteView):
     template_name = 'post_delete.html'
     success_url = reverse_lazy('news_list')
 
-
-def SubscriberNotificationMail(a):
-    print(f'VIEWS.PY SubscriberNotificationMail + {a}')
-    pass

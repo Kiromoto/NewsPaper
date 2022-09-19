@@ -26,3 +26,57 @@ Traceback (most recent call last):
     user = request.users
 AttributeError: 'WSGIRequest' object has no attribute 'users'
 2022-09-14 23:53:31,192 ERROR "GET /news/subscribes/3/ HTTP/1.1" 500 76172 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\servers\basehttp.py None
+2022-09-19 22:38:38,821 ERROR Internal Server Error: /news/62 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'Post' object has no attribute 'filters'"), <traceback object at 0x00000130A4DE5040>)
+Traceback (most recent call last):
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "C:\CODE\code_python\NewsPaper\NewsPaper\news\views.py", line 42, in get_context_data
+    print(Post.objects.get(id=id).filters('post_title'))
+AttributeError: 'Post' object has no attribute 'filters'
+2022-09-19 22:38:38,822 ERROR "GET /news/62 HTTP/1.1" 500 91188 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\servers\basehttp.py None
+2022-09-19 22:39:01,095 ERROR Internal Server Error: /news/62 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'Post' object has no attribute 'filter'"), <traceback object at 0x00000260F62E0980>)
+Traceback (most recent call last):
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "C:\CODE\code_python\NewsPaper\NewsPaper\news\views.py", line 42, in get_context_data
+    print(Post.objects.get(id=id).filter('post_title'))
+AttributeError: 'Post' object has no attribute 'filter'
+2022-09-19 22:39:01,098 ERROR "GET /news/62 HTTP/1.1" 500 91163 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\servers\basehttp.py None
+2022-09-19 22:39:18,479 ERROR Internal Server Error: /news/62 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'Post' object has no attribute 'values'"), <traceback object at 0x000001E5C53C7EC0>)
+Traceback (most recent call last):
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "C:\CODE\code_python\NewsPaper\NewsPaper\news\views.py", line 42, in get_context_data
+    print(Post.objects.get(id=id).values('post_title'))
+AttributeError: 'Post' object has no attribute 'values'
+2022-09-19 22:39:18,481 ERROR "GET /news/62 HTTP/1.1" 500 91163 C:\Users\Kiromoto\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\servers\basehttp.py None

@@ -45,7 +45,10 @@
     <tr align="right">
         <form align="center">
             {% for cat in new.post_category.all %}
-               <button> <a href="{% url 'subscr_me' cat.id %}">Подписаться на {{ cat.name }}</a> </button>&nbsp; &nbsp;
+                {% if is_subscribe %}
+                    <button> <a href="{% url 'subscr_me' cat.id %}">Отписаться от {{ cat.name }}</a> </button>
+            &nbsp;   {% else %}
+                    <button> <a href="{% url 'subscr_me' cat.id %}">Подписаться на {{ cat.name }}</a> </button>                {% endif %}&nbsp;
             {% endfor %}
         </form>
     </tr>

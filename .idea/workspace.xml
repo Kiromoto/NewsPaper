@@ -2,7 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958a852c-66ed-46cf-abc7-647f7b14103e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/0af0a01479ac9127e03bb88d927775fe.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/2925590b5d646074e8d27fb3932aa077.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/5141276ce0f6110afaad86d3ec157b9b.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/5553f98e26a3fb1b3d65ea8cf9463deb.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/68cd758e9df58c3ddca6169005f40c26.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/6d90f6e6543b9c749086db8b3394130a.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/6ed174cd41e6e1e92d12c324c619845b.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/70468fc5cf58290c86730a67eb8fc7c7.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/76111e02ad036d6fa32f8faafeee0087.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/92c1beea9b9606ec8e855fc75f33d6fb.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/96b0a47f2a242c3fdc2607d78a17f49e.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/a4a59e3f33be49dcb3afcfbfa05644df.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/a6a69857cebe4adcc5c5c9b2561b9080.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/b50aacf0d266d36d3b688c33a2b31891.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/e47be7c6c785c0667f88b5f7861a5ac4.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/e56b6ccf108ebb3c86e9ff073b497ea9.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/eb04d2f5652f6f19d73de0650496d2a8.djcache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/cache_files/f0275af056192bdc039d721652cdcc47.djcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/cache_files/32cca095314f2fa642c87acf7329148a.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/cache_files/32cca095314f2fa642c87acf7329148a.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/cache_files/6d92c3ffdb4256ff600855bb80ee70c5.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/cache_files/6d92c3ffdb4256ff600855bb80ee70c5.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/errors.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/general.log" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/general.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/testPostgreSQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/testPostgreSQL.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,16 +60,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/CODE/code_python/NewsPaper&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/kiro/code/NewsPaperLinux",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\CODE\code_python\NewsPaper\NewsPaper\templates" />
